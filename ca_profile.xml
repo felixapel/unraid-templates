@@ -1,0 +1,20 @@
+<CommunityApplications>
+  <Profile>
+Self-hosted reading tools by **felixapel**.
+
+Currently maintained: **CWA eBook Translate** — bilingual reading for
+[Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated).
+Translate ebooks paragraph-by-paragraph *while you read*, in 100+ languages,
+using your own local LLM (Ollama / vLLM / LM Studio) or any major cloud API.
+Proxy-injection install: your CWA container stays 100% stock — no template
+mounts, no modifications, survives CWA updates. GPL-3.0, no telemetry, no
+subscription.
+
+**Support:** bugs → [GitHub Issues](https://github.com/felixapel/CWA-eBook-Translate-Plugin/issues),
+questions → [GitHub Discussions](https://github.com/felixapel/CWA-eBook-Translate-Plugin/discussions).
+  </Profile>
+  <Icon>https://raw.githubusercontent.com/felixapel/unraid-templates/main/icons/cwa-ebook-translate-plugin.png</Icon>
+  <WebPage>https://github.com/felixapel/CWA-eBook-Translate-Plugin</WebPage>
+  <DonateLink>https://github.com/felixapel/CWA-eBook-Translate-Plugin#%EF%B8%8F-support-the-project</DonateLink>
+  <DonateText>If this plugin saved you a translation subscription, consider supporting development</DonateText>
+</CommunityApplications>
