@@ -11,7 +11,7 @@
   <Overview>Bilingual reading for Calibre-Web-Automated: translate ebooks paragraph-by-paragraph WHILE you read, in 100+ languages, using your own local LLM (Ollama / vLLM / LM Studio - Gemma is the tuned default) or any major cloud API (OpenAI, Anthropic, Gemini, Groq, DeepSeek, OpenRouter...).&#10;&#10;PROXY-INJECTION MODE (this template): the container sits in front of your existing CWA and injects the translation overlay on the fly. Your CWA container stays 100% stock - no template mounts, no modifications, survives CWA updates. Simply browse your library through THIS container's port instead of CWA's and the translator control bar appears in the ebook reader.&#10;&#10;Features: side-by-side bilingual view, whole-chapter background prefetch, persistent translation cache (never pay for the same paragraph twice), per-IP rate limiting, provider fallback, non-root container. GPL-3.0, no telemetry, no subscription.</Overview>
   <Category>MediaApp:Books Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/felixapel/unraid-templates/main/cwa-ebook-translate-plugin.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/felixapel/unraid-templates/main/templates/cwa-ebook-translate-plugin.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/felixapel/unraid-templates/main/icons/cwa-ebook-translate-plugin.png</Icon>
   <ExtraParams/>
   <PostArgs/>
