@@ -16,7 +16,7 @@
   <ExtraParams/>
   <PostArgs/>
   <DonateText>If this plugin saves you a translation subscription, consider supporting development</DonateText>
-  <DonateLink>https://github.com/felixapel/CWA-eBook-Translate-Plugin#-support-the-project</DonateLink>
+  <DonateLink>https://ko-fi.com/felixapel</DonateLink>
   <Requires>A running Calibre-Web-Automated instance (reachable from this container), and an LLM backend: local (Ollama/vLLM/LM Studio) or a cloud API key.</Requires>
   <Config Name="Reader Port (browse CWA here)" Target="8080" Default="8084" Mode="tcp" Description="Read your library through this port to get the translation overlay. Your CWA port keeps serving stock CWA." Type="Port" Display="always" Required="true" Mask="false">8084</Config>
   <Config Name="CWA URL" Target="CWA_UPSTREAM" Default="" Mode="" Description="URL of your Calibre-Web-Automated instance, e.g. http://YOUR-SERVER-IP:8083 (use the HOST port you mapped for CWA). Required for the overlay; leave empty for API-only mode." Type="Variable" Display="always" Required="true" Mask="false"></Config>
