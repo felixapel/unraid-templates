@@ -2,9 +2,16 @@
 
 Community Applications template repository.
 
-| App | Description | Source |
-|---|---|---|
-| **CWA eBook Translate** | Bilingual reading for Calibre-Web-Automated — translate ebooks paragraph-by-paragraph while reading, in 100+ languages, with local LLMs or any cloud API. Proxy-injection install: your CWA container stays 100% stock. | [GitHub](https://github.com/felixapel/CWA-eBook-Translate-Plugin) · [GHCR](https://github.com/felixapel/CWA-eBook-Translate-Plugin/pkgs/container/cwa-ebook-translate-plugin) |
+No installable template is currently published.
+
+The previous CWA eBook Translate template was quarantined because it used a
+moving image tag and no longer represented the project's supported security and
+authentication contract. A replacement for v2.2.1 will be published only after
+the exact GHCR digest and final XML pass physical Unraid acceptance and the
+Community Applications validation workflow.
+
+Project source and status:
+[CWA eBook Translate](https://github.com/felixapel/CWA-eBook-Translate-Plugin).
 
 ## Support
 
