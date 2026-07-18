@@ -6,9 +6,11 @@ Self-hosted reading tools by **felixapel**.
 [Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated).
 Translate ebooks paragraph-by-paragraph *while you read*, in 100+ languages,
 using your own local LLM (Ollama / vLLM / LM Studio) or any major cloud API.
-The old install template is temporarily quarantined while the exact v2.2.1
-image digest and replacement XML complete physical Unraid and Community
-Applications validation. Do not install an archived copy that uses `latest`.
+The old install template is temporarily quarantined. The reviewed v2.2.2
+candidate image has the immutable index digest
+`ghcr.io/felixapel/cwa-ebook-translate-plugin@sha256:6fff8f7cd9210bb80439c93817edb5d813794e5e582d6c7470457f5688fb4e48`.
+Its replacement XML still requires physical Unraid and Community Applications
+validation. Do not install an archived copy that uses `latest`.
 
 **Support:** bugs → [GitHub Issues](https://github.com/felixapel/CWA-eBook-Translate-Plugin/issues),
 questions → [GitHub Discussions](https://github.com/felixapel/CWA-eBook-Translate-Plugin/discussions),
