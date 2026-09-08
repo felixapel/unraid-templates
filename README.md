@@ -11,7 +11,44 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 
 ## 📦 Available Templates
 
-### 🛡️ 1. Calibre Bookwarden (`calibre-bookwarden.xml`)
+### 🌐 1. Book Translator Hub (`book-translator-hub.xml`)
+> **Universal Bilingual Reading Overlay & Translation Engine** for Calibre-Web Automated (CWA), Kavita, and self-hosted ebook libraries.
+
+<p align="center">
+  <img src="icons/book-translator-hub.png" alt="Book Translator Hub Icon" width="128" height="128">
+</p>
+
+* **Core Philosophy**: *"Read any book in any language with zero friction and literary elegance."*
+* **Container Image**: `ghcr.io/felixapel/book-translator-hub:latest`
+* **Web UI (Proxy Mode)**: `8385` (maps to container `8080`)
+* **API Port**: `8390` (direct REST API & SSE streaming)
+* **Project Repository**: [felixapel/book-translator-hub](https://github.com/felixapel/book-translator-hub)
+
+#### Key Capabilities:
+* **Zero-Wait Progressive Reveal**: Real-time Server-Sent Events (SSE) stream translated words as the LLM generates them.
+* **Literary-Tuned Pipeline**: Preserves author tone, formatting, poetry, and character dialogue with sliding `[CONTEXT]` window.
+* **Multi-Reader Native Support**: Seamlessly overlays on both **Calibre-Web Automated** (CWA) and **Kavita** EPUB reader views.
+* **Flexible LLM Backends**: Zero-cost local inference (**vLLM**, **Ollama**, **Bifrost**) or cloud providers (**Gemini**, **OpenAI**, **Claude**, **DeepSeek**, **Groq**).
+* **Robust SQLite WAL Persistence**: Instant hash-indexed translation lookup (<1ms) so revisited paragraphs load without LLM requests.
+
+#### Port & Path Mappings:
+| Parameter | Type | Container Path / Target | Default Host Path / Value | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **API Port** | Port | `8390` | `8390` | Direct translation REST API + SSE streaming |
+| **Proxy Port** | Port | `8080` | `8385` | Injected reader proxy port (access your reader through this) |
+| **Appdata Storage** | Path | `/app/data` | `/mnt/user/appdata/book-translator-hub/data` | SQLite translations cache database |
+| **Runtime Role** | Env | `BT_ROLE` | `api` | `api` (API only), `proxy` (reverse proxy overlay), or `all` |
+| **Calibre-Web URL** | Env | `CWA_URL` | *(Optional)* | Upstream URL for Calibre-Web (e.g. `http://192.168.0.122:8383`) |
+| **Kavita URL** | Env | `KAVITA_URL` | *(Optional)* | Upstream URL for Kavita (e.g. `http://192.168.0.122:5547`) |
+| **LLM Provider** | Env | `LLM_PROVIDER` | `local` | `local` (vLLM/Ollama), `gemini`, `openai`, `anthropic`, `groq`, `deepseek` |
+| **LLM Model** | Env | `LLM_MODEL` | `gemma4-12b` | Target translation model name |
+| **Local LLM URL** | Env | `BT_LOCAL_URL` | `http://192.168.0.122:2819/v1/chat/completions` | Local OpenAI-compatible API endpoint |
+| **LLM API Key** | Env | `LLM_API_KEY` | *(Optional)* | API key for cloud providers |
+| **Allowed Origins** | Env | `BT_ALLOWED_ORIGINS`| `*` | CORS allowed origins |
+
+---
+
+### 🛡️ 2. Calibre Bookwarden (`calibre-bookwarden.xml`)
 > **The Forensic Guardian for Calibre Libraries** — Content-grounded metadata verification, 360° deep audits, and high-fidelity cover triage.
 
 <p align="center">
@@ -41,15 +78,6 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 
 ---
 
-### 🌐 2. CWA eBook Translate
-> **Bilingual Reading Companion** for [Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated).
-
-* Translate ebooks paragraph-by-paragraph *while you read*, in 100+ languages.
-* Supports local LLMs (Ollama / vLLM / LM Studio) or cloud providers (Gemini, OpenAI, Claude).
-* **Project Repository**: [felixapel/CWA-eBook-Translate-Plugin](https://github.com/felixapel/CWA-eBook-Translate-Plugin)
-
----
-
 ## 🛠️ How to Add to Unraid
 
 1. Open your **Unraid WebGUI**.
@@ -60,7 +88,7 @@ Official Unraid Community Applications repository maintained by [felixapel](http
    https://github.com/felixapel/unraid-templates
    ```
 5. Click **Save**.
-6. Navigate to the **Apps** (Community Applications) tab, or click **Add Container** and select **calibre-bookwarden** from the template dropdown.
+6. Navigate to the **Apps** (Community Applications) tab, or click **Add Container** and select **book-translator-hub** or **calibre-bookwarden** from the template dropdown.
 
 ---
 

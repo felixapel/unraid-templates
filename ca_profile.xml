@@ -8,16 +8,19 @@ Content-grounded metadata verification and cover forensics guardian for Calibre 
 * **WebUI:** http://[IP]:8080/
 * **Repository:** [GitHub](https://github.com/felixapel/calibre-bookwarden)
 
-### 🌐 CWA eBook Translate
-Bilingual reading for [Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated). Translate ebooks paragraph-by-paragraph *while you read*, in 100+ languages, using local LLMs (Ollama / vLLM / LM Studio) or major cloud APIs.
-* **Repository:** [GitHub](https://github.com/felixapel/CWA-eBook-Translate-Plugin)
+### 🌐 Book Translator Hub
+Universal bilingual reading overlay and real-time translation engine for [Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated), [Kavita](https://www.kavitareader.com/), and self-hosted ebook libraries. Translate ebooks paragraph-by-paragraph *while you read*, in 100+ languages, using local LLMs (vLLM / Ollama / Bifrost) or major cloud APIs (Gemini, OpenAI, Claude, DeepSeek, Groq).
+* **Template:** `book-translator-hub.xml`
+* **WebUI (Proxy):** http://[IP]:8385/
+* **API Port:** 8390
+* **Repository:** [GitHub](https://github.com/felixapel/book-translator-hub)
 
 **Support:**
-* Bugs: [GitHub Issues](https://github.com/felixapel/calibre-bookwarden/issues)
-* Discussions: [GitHub Discussions](https://github.com/felixapel/calibre-bookwarden/discussions)
+* Calibre Bookwarden: [GitHub Issues](https://github.com/felixapel/calibre-bookwarden/issues)
+* Book Translator Hub: [GitHub Issues](https://github.com/felixapel/book-translator-hub/issues)
 * Contact: felixguillermoapel@gmail.com
   </Profile>
-  <Icon>https://raw.githubusercontent.com/felixapel/unraid-templates/main/icons/calibre-bookwarden.png</Icon>
+  <Icon>https://raw.githubusercontent.com/felixapel/unraid-templates/main/icons/book-translator-hub.png</Icon>
   <WebPage>https://github.com/felixapel/unraid-templates</WebPage>
   <DonateLink>https://ko-fi.com/felixapel</DonateLink>
   <DonateText>Support self-hosted reading tools and library forensics development</DonateText>
