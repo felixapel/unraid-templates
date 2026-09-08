@@ -1,23 +1,24 @@
 <CommunityApplications>
   <Profile>
-Self-hosted reading tools by **felixapel**.
+Self-hosted reading tools and library forensics by **felixapel**.
 
-**CWA eBook Translate** provides bilingual reading for
-[Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated).
-Translate ebooks paragraph-by-paragraph *while you read*, in 100+ languages,
-using your own local LLM (Ollama / vLLM / LM Studio) or any major cloud API.
-The old install template is temporarily quarantined. The reviewed v2.2.2
-candidate image has the immutable index digest
-`ghcr.io/felixapel/cwa-ebook-translate-plugin@sha256:6fff8f7cd9210bb80439c93817edb5d813794e5e582d6c7470457f5688fb4e48`.
-Its replacement XML still requires physical Unraid and Community Applications
-validation. Do not install an archived copy that uses `latest`.
+### 🛡️ Calibre Bookwarden
+Content-grounded metadata verification and cover forensics guardian for Calibre libraries. The book file is the ground truth, LLMs are witnesses. Includes read-only 360° forensic audits, swipeable Cover Deck triage UI, Series Gap Hunter, multi-format duplicate consolidation, and sealed cryptographic proofs.
+* **Template:** `calibre-bookwarden.xml`
+* **WebUI:** http://[IP]:8080/
+* **Repository:** [GitHub](https://github.com/felixapel/calibre-bookwarden)
 
-**Support:** bugs → [GitHub Issues](https://github.com/felixapel/CWA-eBook-Translate-Plugin/issues),
-questions → [GitHub Discussions](https://github.com/felixapel/CWA-eBook-Translate-Plugin/discussions),
-private contact → felixguillermoapel@gmail.com.
+### 🌐 CWA eBook Translate
+Bilingual reading for [Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated). Translate ebooks paragraph-by-paragraph *while you read*, in 100+ languages, using local LLMs (Ollama / vLLM / LM Studio) or major cloud APIs.
+* **Repository:** [GitHub](https://github.com/felixapel/CWA-eBook-Translate-Plugin)
+
+**Support:**
+* Bugs: [GitHub Issues](https://github.com/felixapel/calibre-bookwarden/issues)
+* Discussions: [GitHub Discussions](https://github.com/felixapel/calibre-bookwarden/discussions)
+* Contact: felixguillermoapel@gmail.com
   </Profile>
-  <Icon>https://raw.githubusercontent.com/felixapel/unraid-templates/main/icons/cwa-ebook-translate-plugin.png</Icon>
-  <WebPage>https://github.com/felixapel/CWA-eBook-Translate-Plugin</WebPage>
+  <Icon>https://raw.githubusercontent.com/felixapel/unraid-templates/main/icons/calibre-bookwarden.png</Icon>
+  <WebPage>https://github.com/felixapel/unraid-templates</WebPage>
   <DonateLink>https://ko-fi.com/felixapel</DonateLink>
-  <DonateText>If this plugin saved you a translation subscription, consider supporting development</DonateText>
+  <DonateText>Support self-hosted reading tools and library forensics development</DonateText>
 </CommunityApplications>
