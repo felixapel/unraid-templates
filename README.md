@@ -1,6 +1,7 @@
 # 🚀 felixapel's Unraid Community Applications Templates
 
 [![Unraid](https://img.shields.io/badge/Unraid-Community%20Applications-blue?logo=unraid&logoColor=white)](https://unraid.net)
+[![Release: 2.4.0](https://img.shields.io/badge/Release-2.4.0-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/felixapel)
 [![Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5e5b?logo=kofi&logoColor=white)](https://ko-fi.com/felixapel)
@@ -12,7 +13,7 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 ## 📦 Available Templates
 
 ### 🌐 1. Book Translator Hub (`book-translator-hub.xml`)
-> **Universal Bilingual Reading Overlay & Translation Engine** for Calibre-Web Automated (CWA), Kavita, and self-hosted ebook libraries.
+> **Universal Bilingual Reading Overlay & Real-Time Translation Engine** for Calibre-Web Automated (CWA), Kavita, and self-hosted ebook libraries.
 
 <p align="center">
   <img src="icons/book-translator-hub.png" alt="Book Translator Hub Icon" width="128" height="128">
@@ -25,11 +26,15 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 * **Project Repository**: [felixapel/book-translator-hub](https://github.com/felixapel/book-translator-hub)
 
 #### Key Capabilities:
-* **Zero-Wait Progressive Reveal**: Real-time Server-Sent Events (SSE) stream translated words as the LLM generates them.
+* **Real-Time Token Streaming (SSE)**: Streams translated words into the viewport as the LLM generates them via `/translate/stream` (~160ms time-to-first-token).
+* **Instant Viewport Rush**: Concurrently translates paragraphs 1, 2, and 3 in parallel micro-batches directly to `/translate`.
+* **Directional Lookahead Prefetch**: Pre-translates upcoming pages along the reader's directional trajectory for a 0ms page-turn experience.
+* **High-Capacity IndexedDB Cache**: Client-side storage (`BookTranslatorDB`) overcomes browser 5MB `localStorage` limits, caching entire books offline.
+* **Robust SQLite WAL Persistence**: Server-side cache with 256MB mmap and 64MB RAM page cache delivers sub-millisecond (<0.5ms) lookups.
 * **Literary-Tuned Pipeline**: Preserves author tone, formatting, poetry, and character dialogue with sliding `[CONTEXT]` window.
 * **Multi-Reader Native Support**: Seamlessly overlays on both **Calibre-Web Automated** (CWA) and **Kavita** EPUB reader views.
+* **Auto-Detect & Dedicated E-Ink Mode**: Automatic source language detection and 1-bit high-contrast layout for e-readers.
 * **Flexible LLM Backends**: Zero-cost local inference (**vLLM**, **Ollama**, **Bifrost**) or cloud providers (**Gemini**, **OpenAI**, **Claude**, **DeepSeek**, **Groq**).
-* **Robust SQLite WAL Persistence**: Instant hash-indexed translation lookup (<1ms) so revisited paragraphs load without LLM requests.
 
 #### Port & Path Mappings:
 | Parameter | Type | Container Path / Target | Default Host Path / Value | Description |
@@ -37,7 +42,7 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 | **API Port** | Port | `8390` | `8390` | Direct translation REST API + SSE streaming |
 | **Proxy Port** | Port | `8080` | `8385` | Injected reader proxy port (access your reader through this) |
 | **Appdata Storage** | Path | `/app/data` | `/mnt/user/appdata/book-translator-hub/data` | SQLite translations cache database |
-| **Runtime Role** | Env | `BT_ROLE` | `api` | `api` (API only), `proxy` (reverse proxy overlay), or `all` |
+| **Runtime Role** | Env | `BT_ROLE` | `all` | `all` (combined API + proxy overlay), `api` (API only), `proxy` |
 | **Calibre-Web URL** | Env | `CWA_URL` | *(Optional)* | Upstream URL for Calibre-Web (e.g. `http://192.168.0.122:8383`) |
 | **Kavita URL** | Env | `KAVITA_URL` | *(Optional)* | Upstream URL for Kavita (e.g. `http://192.168.0.122:5547`) |
 | **LLM Provider** | Env | `LLM_PROVIDER` | `local` | `local` (vLLM/Ollama), `gemini`, `openai`, `anthropic`, `groq`, `deepseek` |
@@ -45,6 +50,16 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 | **Local LLM URL** | Env | `BT_LOCAL_URL` | `http://192.168.0.122:2819/v1/chat/completions` | Local OpenAI-compatible API endpoint |
 | **LLM API Key** | Env | `LLM_API_KEY` | *(Optional)* | API key for cloud providers |
 | **Allowed Origins** | Env | `BT_ALLOWED_ORIGINS`| `*` | CORS allowed origins |
+| **Auth Mode** | Env | `BT_AUTH_MODE` | `disabled` | Authentication mode: `disabled`, `token`, `cwa_session`, `reader_session` |
+| **Allow Insecure Auth** | Env | `BT_ALLOW_INSECURE_AUTH` | `true` | Allows unauthenticated LAN operation when `BT_AUTH_MODE=disabled` |
+| **Batch Size** | Env | `BT_BATCH_SIZE` | `6` | Max paragraphs per grouped LLM translation request |
+| **Batch Source Budget** | Env | `BT_BATCH_SOURCE_TOKEN_BUDGET` | `1500` | Max input source tokens per batch group |
+| **Prefetch Pacing Delay** | Env | `BT_CLIENT_PREFETCH_GAP_MS` | `1000` | Delay (ms) between lookahead prefetch calls |
+| **Max Upstream Inflight** | Env | `BT_MAX_UPSTREAM_INFLIGHT` | `8` | Maximum concurrent requests dispatched to LLM backend |
+| **Max Concurrent** | Env | `BT_MAX_CONCURRENT` | `8` | Maximum concurrent batch worker threads |
+| **Request Timeout** | Env | `BT_TIMEOUT` | `90` | Upstream LLM HTTP timeout in seconds |
+| **Context Window** | Env | `BT_CONTEXT_WINDOW` | `1` | Surrounding paragraphs provided as non-translated narrative context |
+| **Timezone** | Env | `TZ` | `Europe/Berlin` | Container operational timezone |
 
 ---
 
@@ -98,3 +113,4 @@ If you find these self-hosted reading and library management tools useful in you
 * 🌟 Star the repositories on GitHub!
 * ☕ [Support via Ko-fi](https://ko-fi.com/felixapel)
 * 💖 [Sponsor on GitHub](https://github.com/sponsors/felixapel)
+
