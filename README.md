@@ -1,7 +1,8 @@
 # 🚀 felixapel's Unraid Community Applications Templates
 
 [![Unraid](https://img.shields.io/badge/Unraid-Community%20Applications-blue?logo=unraid&logoColor=white)](https://unraid.net)
-[![Release: 2.4.0](https://img.shields.io/badge/Release-2.4.0-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.0)
+[![Release: 2.4.1](https://img.shields.io/badge/Release-2.4.1-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.1)
+[![Bookwarden Release: 1.3.1](https://img.shields.io/badge/Bookwarden-1.3.1-emerald.svg)](https://github.com/felixapel/calibre-bookwarden/releases/tag/v1.3.1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/felixapel)
 [![Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5e5b?logo=kofi&logoColor=white)](https://ko-fi.com/felixapel)
@@ -41,7 +42,7 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 | :--- | :--- | :--- | :--- | :--- |
 | **API Port** | Port | `8390` | `8390` | Direct translation REST API + SSE streaming |
 | **Proxy Port** | Port | `8080` | `8385` | Injected reader proxy port (access your reader through this) |
-| **Appdata Storage** | Path | `/app/data` | `/mnt/user/appdata/book-translator-hub/data` | SQLite translations cache database |
+| **Appdata Storage** | Path | `/app/data` | `/mnt/user/appdata/book-translator-hub/data` | SQLite translations cache database (requires container UID 101:GID 102 ownership, 0700) |
 | **Runtime Role** | Env | `BT_ROLE` | `all` | `all` (combined API + proxy overlay), `api` (API only), `proxy` |
 | **Calibre-Web URL** | Env | `CWA_URL` | *(Optional)* | Upstream URL for Calibre-Web (e.g. `http://192.168.0.122:8383`) |
 | **Kavita URL** | Env | `KAVITA_URL` | *(Optional)* | Upstream URL for Kavita (e.g. `http://192.168.0.122:5547`) |
@@ -71,7 +72,7 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 </p>
 
 * **Core Philosophy**: *"The book file is the ground truth. LLMs are witnesses."*
-* **Container Image**: `ghcr.io/felixapel/calibre-bookwarden:latest`
+* **Container Image**: `ghcr.io/felixapel/calibre-bookwarden:1.3.1`
 * **Web UI Port**: `8080` (maps to container `8080`)
 * **Project Repository**: [felixapel/calibre-bookwarden](https://github.com/felixapel/calibre-bookwarden)
 

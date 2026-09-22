@@ -23,7 +23,7 @@
   <Requires>Local LLM (vLLM/Ollama/Bifrost) or Cloud LLM API Key (Gemini, OpenAI, Claude, Groq)</Requires>
 
   <!-- Persistent Storage -->
-  <Config Name="Appdata (Database &amp; Cache)" Target="/app/data" Default="/mnt/user/appdata/book-translator-hub/data" Mode="rw" Description="Persistent storage for SQLite translations.db and persistent caching" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/book-translator-hub/data</Config>
+  <Config Name="Appdata (Database &amp; Cache)" Target="/app/data" Default="/mnt/user/appdata/book-translator-hub/data" Mode="rw" Description="Persistent storage for SQLite translations.db and persistent caching. Requires container appuser ownership (UID 101:GID 102, e.g. chown -R 101:102 /mnt/user/appdata/book-translator-hub/data; chmod 0700)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/book-translator-hub/data</Config>
 
   <!-- Network & Ports -->
   <Config Name="API Port" Target="8390" Default="8390" Mode="tcp" Description="Direct translation API port (REST + SSE streaming)" Type="Port" Display="always" Required="true" Mask="false">8390</Config>
