@@ -2,7 +2,7 @@
 
 [![Unraid](https://img.shields.io/badge/Unraid-Community%20Applications-blue?logo=unraid&logoColor=white)](https://unraid.net)
 [![Release: 2.4.1](https://img.shields.io/badge/Release-2.4.1-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.1)
-[![Bookwarden Release: 1.3.2](https://img.shields.io/badge/Bookwarden-1.3.2-emerald.svg)](https://github.com/felixapel/calibre-bookwarden/releases/tag/v1.3.2)
+[![Bookwarden release](https://img.shields.io/github/v/release/felixapel/calibre-bookwarden?label=Bookwarden%20release&color=emerald)](https://github.com/felixapel/calibre-bookwarden/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/felixapel)
 [![Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5e5b?logo=kofi&logoColor=white)](https://ko-fi.com/felixapel)
@@ -72,7 +72,7 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 </p>
 
 * **Approach**: Inspect attached formats, record provenance and uncertainty, and keep production library writes disabled.
-* **Latest release**: [Calibre Bookwarden v1.3.2](https://github.com/felixapel/calibre-bookwarden/releases/tag/v1.3.2)
+* **Latest release**: [Calibre Bookwarden](https://github.com/felixapel/calibre-bookwarden/releases/latest)
 * **Project repository**: [felixapel/calibre-bookwarden](https://github.com/felixapel/calibre-bookwarden)
 * **Supported deployment**: use the upstream [Certificate A installation guide](https://github.com/felixapel/calibre-bookwarden/blob/main/INSTALL.md) and [production operations runbook](https://github.com/felixapel/calibre-bookwarden/blob/main/docs/runbooks/production-operations.md).
 
