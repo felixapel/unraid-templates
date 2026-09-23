@@ -2,7 +2,7 @@
 
 [![Unraid](https://img.shields.io/badge/Unraid-Community%20Applications-blue?logo=unraid&logoColor=white)](https://unraid.net)
 [![Release: 2.4.1](https://img.shields.io/badge/Release-2.4.1-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.1)
-[![Bookwarden Release: 1.3.1](https://img.shields.io/badge/Bookwarden-1.3.1-emerald.svg)](https://github.com/felixapel/calibre-bookwarden/releases/tag/v1.3.1)
+[![Bookwarden Release: 1.3.2](https://img.shields.io/badge/Bookwarden-1.3.2-emerald.svg)](https://github.com/felixapel/calibre-bookwarden/releases/tag/v1.3.2)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/felixapel)
 [![Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5e5b?logo=kofi&logoColor=white)](https://ko-fi.com/felixapel)
@@ -64,33 +64,19 @@ Official Unraid Community Applications repository maintained by [felixapel](http
 
 ---
 
-### 🛡️ 2. Calibre Bookwarden (`calibre-bookwarden.xml`)
-> **The Forensic Guardian for Calibre Libraries** — Content-grounded metadata verification, 360° deep audits, and high-fidelity cover triage.
+### 🛡️ Calibre Bookwarden (reference only)
+> Evidence-led Calibre metadata verification with a read-only Certificate A production profile.
 
 <p align="center">
-  <img src="icons/calibre-bookwarden.png" alt="Calibre Bookwarden Icon" width="128" height="128">
+  <a href="https://github.com/felixapel/calibre-bookwarden/blob/main/docs/assets/certificate-a-overview.png"><img src="https://raw.githubusercontent.com/felixapel/calibre-bookwarden/main/docs/assets/certificate-a-overview.png" alt="Certificate A overview with synthetic example data" width="720"></a>
 </p>
 
-* **Core Philosophy**: *"The book file is the ground truth. LLMs are witnesses."*
-* **Container Image**: `ghcr.io/felixapel/calibre-bookwarden:1.3.1`
-* **Web UI Port**: `8080` (maps to container `8080`)
-* **Project Repository**: [felixapel/calibre-bookwarden](https://github.com/felixapel/calibre-bookwarden)
+* **Approach**: Inspect attached formats, record provenance and uncertainty, and keep production library writes disabled.
+* **Latest release**: [Calibre Bookwarden v1.3.2](https://github.com/felixapel/calibre-bookwarden/releases/tag/v1.3.2)
+* **Project repository**: [felixapel/calibre-bookwarden](https://github.com/felixapel/calibre-bookwarden)
+* **Supported deployment**: use the upstream [Certificate A installation guide](https://github.com/felixapel/calibre-bookwarden/blob/main/INSTALL.md) and [production operations runbook](https://github.com/felixapel/calibre-bookwarden/blob/main/docs/runbooks/production-operations.md).
 
-#### Key Capabilities:
-* **Zero Hallucinations & Forensic Ground Truth**: Extracts exact metadata, title, author, and native covers directly from container files (`.epub`, `.pdf`, `.cbz`).
-* **360° Forensic Audit Studio**: Deep inspection of author desyncs (`Author` vs `Author Sort`), broken paths, cover anomalies, and database hygiene.
-* **Swipeable Cover Studio**: Side-by-side triage comparing current cover vs native embedded cover with Laplacian sharpness, Shannon entropy, and keyboard controls (<kbd>←</kbd> Skip, <kbd>→</kbd> Approve, <kbd>↑</kbd> Extract).
-* **Curation Guardian**: **Series Gap Hunter** (detects missing book volumes) and **Duplicate Consolidator** (graphs cross-format duplicates).
-* **Safety Invariant**: Operates in strict read-only mode by default (`BOOKWARDEN_READ_ONLY=true`) to guarantee zero risk of library corruption.
-
-#### Default Port & Path Mappings:
-| Parameter | Type | Container Path | Default Host Path / Value | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| **WebUI Port** | Port | `8080` | `8080` | WebUI and REST API dashboard |
-| **Calibre Library** | Path | `/calibre` | `/mnt/user/data/media/books` | Root Calibre library containing `metadata.db` |
-| **Config & Artifacts** | Path | `/config` | `/mnt/user/appdata/calibre-bookwarden` | Persistent audit reports, cache, and state |
-| **Read Only Mode** | Env | `BOOKWARDEN_READ_ONLY` | `true` | When true, mutations are strictly blocked |
-| **Gemini API Key** | Env | `GEMINI_API_KEY` | *(Optional)* | For multimodal cover verification |
+This repository does not provide a validated Unraid one-click adapter for Bookwarden. The former XML is retained only as [`archive/calibre-bookwarden.xml.disabled`](archive/calibre-bookwarden.xml.disabled) for historical review and is not an installable template. Follow the upstream Certificate A Compose/runbook requirements, including their approval and isolation boundaries; do not assume a zero-risk or working single-container Unraid installation from this repository.
 
 ---
 
@@ -104,7 +90,7 @@ Official Unraid Community Applications repository maintained by [felixapel](http
    https://github.com/felixapel/unraid-templates
    ```
 5. Click **Save**.
-6. Navigate to the **Apps** (Community Applications) tab, or click **Add Container** and select **book-translator-hub** or **calibre-bookwarden** from the template dropdown.
+6. Navigate to the **Apps** (Community Applications) tab, or click **Add Container** and select **book-translator-hub** from the template dropdown.
 
 ---
 

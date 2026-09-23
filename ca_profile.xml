@@ -1,12 +1,8 @@
 <CommunityApplications>
   <Profile>
-Self-hosted reading tools and library forensics by **felixapel**.
-
-### 🛡️ Calibre Bookwarden
-Content-grounded metadata verification and cover forensics guardian for Calibre libraries. The book file is the ground truth, LLMs are witnesses. Includes read-only 360° forensic audits, swipeable Cover Deck triage UI, Series Gap Hunter, multi-format duplicate consolidation, and sealed cryptographic proofs.
-* **Template:** `calibre-bookwarden.xml`
-* **WebUI:** http://[IP]:8080/
-* **Repository:** [GitHub](https://github.com/felixapel/calibre-bookwarden)
+Self-hosted reading tools by **felixapel**. Bookwarden remains documented in
+the repository README as a separate project; there is no validated Unraid
+one-click template for its Certificate A release.
 
 ### 🌐 Book Translator Hub
 Universal, zero-wait bilingual reading overlay and real-time translation engine for [Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated), [Kavita](https://www.kavitareader.com/), and self-hosted ebook libraries. Features real-time Server-Sent Events (SSE) token streaming (~160ms TTFT), parallel micro-batches, directional lookahead prefetch, high-capacity IndexedDB offline caching, auto-detect source language, and sub-millisecond SQLite WAL persistence. Supports local LLMs (vLLM / Ollama / Bifrost) and leading cloud providers (Gemini, OpenAI, Claude, DeepSeek, Groq).
@@ -16,7 +12,6 @@ Universal, zero-wait bilingual reading overlay and real-time translation engine 
 * **Repository:** [GitHub](https://github.com/felixapel/book-translator-hub)
 
 **Support:**
-* Calibre Bookwarden: [GitHub Issues](https://github.com/felixapel/calibre-bookwarden/issues)
 * Book Translator Hub: [GitHub Issues](https://github.com/felixapel/book-translator-hub/issues)
 * Contact: felixguillermoapel@gmail.com
   </Profile>
