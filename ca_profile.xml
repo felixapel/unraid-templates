@@ -5,10 +5,9 @@ the repository README as a separate project; there is no validated Unraid
 one-click template for its Certificate A release.
 
 ### 🌐 Book Translator Hub
-Universal, zero-wait bilingual reading overlay and real-time translation engine for [Calibre-Web-Automated](https://github.com/crocodilestick/Calibre-Web-Automated), [Kavita](https://www.kavitareader.com/), and self-hosted ebook libraries. Features real-time Server-Sent Events (SSE) token streaming (~160ms TTFT), parallel micro-batches, directional lookahead prefetch, high-capacity IndexedDB offline caching, auto-detect source language, and sub-millisecond SQLite WAL persistence. Supports local LLMs (vLLM / Ollama / Bifrost) and leading cloud providers (Gemini, OpenAI, Claude, DeepSeek, Groq).
-* **Template:** `book-translator-hub.xml`
-* **WebUI (Proxy):** http://[IP]:8385/
-* **API Port:** 8390
+Bilingual LLM translation overlay for stock [Calibre-Web Automated](https://github.com/crocodilestick/Calibre-Web-Automated). Read CWA through the translator's proxy port and translate EPUB chapters in place with a local OpenAI-compatible LLM, using your existing CWA login.
+* **Template:** `book-translator-hub.xml` (image pinned by digest)
+* **WebUI (reader proxy):** http://[IP]:8385/
 * **Repository:** [GitHub](https://github.com/felixapel/book-translator-hub)
 
 **Support:**
