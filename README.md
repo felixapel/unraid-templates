@@ -1,7 +1,7 @@
 # 🚀 felixapel's Unraid Community Applications Templates
 
 [![Unraid](https://img.shields.io/badge/Unraid-Community%20Applications-blue?logo=unraid&logoColor=white)](https://unraid.net)
-[![Release: 2.4.1](https://img.shields.io/badge/Release-2.4.1-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.2)
+[![Release: 2.4.2](https://img.shields.io/badge/Release-2.4.2-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.2)
 [![Bookwarden release](https://img.shields.io/github/v/release/felixapel/calibre-bookwarden?label=Bookwarden%20release&color=emerald)](https://github.com/felixapel/calibre-bookwarden/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/felixapel)
