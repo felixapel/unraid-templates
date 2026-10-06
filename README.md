@@ -1,7 +1,7 @@
 # 🚀 felixapel's Unraid Community Applications Templates
 
 [![Unraid](https://img.shields.io/badge/Unraid-Community%20Applications-blue?logo=unraid&logoColor=white)](https://unraid.net)
-[![Release: 2.4.1](https://img.shields.io/badge/Release-2.4.1-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.1)
+[![Release: 2.4.1](https://img.shields.io/badge/Release-2.4.1-0ea5e9.svg)](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.2)
 [![Bookwarden release](https://img.shields.io/github/v/release/felixapel/calibre-bookwarden?label=Bookwarden%20release&color=emerald)](https://github.com/felixapel/calibre-bookwarden/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/felixapel)
@@ -20,8 +20,8 @@ Official Unraid Community Applications repository maintained by [felixapel](http
   <img src="icons/book-translator-hub.png" alt="Book Translator Hub Icon" width="128" height="128">
 </p>
 
-* **Container image**: `ghcr.io/felixapel/cwa-ebook-translate-plugin:2.4.1@sha256:35eb357e7b99c7133b06d8cdc50b5aaa86850694ce2f9e6dbf0d1b38e0d93011` (pinned by digest; no `latest`)
-* **Release**: [v2.4.1](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.1)
+* **Container image**: `ghcr.io/felixapel/cwa-ebook-translate-plugin:2.4.2@sha256:03bccc8524af49529281d61688f801423695622968b785090a022ab5d4b0b46c` (pinned by digest; no `latest`)
+* **Release**: [v2.4.2](https://github.com/felixapel/book-translator-hub/releases/tag/v2.4.2)
 * **Install guide**: [Community Applications profile](https://github.com/felixapel/book-translator-hub/blob/main/docs/install/community-applications.md)
 * **Web UI (reader proxy)**: host `8385` → container `8080`. The API port `8390` is never published.
 
