@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>book-translator-hub</Name>
-  <Repository>ghcr.io/felixapel/cwa-ebook-translate-plugin:2.5.1@sha256:9bca080f605a72b1f840375a0708bc3dd7ccfc7c75cfbdb23427a8a4c1ac756e</Repository>
+  <Repository>ghcr.io/felixapel/cwa-ebook-translate-plugin:2.5.2@sha256:50abc0560627757d06871be3665fb1660e08497a4d91e57928dd161bc8c45c02</Repository>
   <Registry>https://github.com/felixapel/book-translator-hub/pkgs/container/cwa-ebook-translate-plugin</Registry>
   <Network>bridge</Network>
   <MyIP/>
